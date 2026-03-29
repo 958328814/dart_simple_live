@@ -8,11 +8,11 @@ plugins {
     id("dev.flutter.flutter-gradle-plugin")
 }
 
-val keystoreProperties = Properties()
-val keystorePropertiesFile = rootProject.file("key.properties")
-if (keystorePropertiesFile.exists()) {
-     keystoreProperties.load(FileInputStream(keystorePropertiesFile))
-}
+// val keystoreProperties = Properties()
+// val keystorePropertiesFile = rootProject.file("key.properties")
+// if (keystorePropertiesFile.exists()) {
+//      keystoreProperties.load(FileInputStream(keystorePropertiesFile))
+// }
 
 android {
     namespace = "com.xycz.simple_live"
@@ -41,10 +41,10 @@ android {
 
     signingConfigs {
         create("release") {
-            keyAlias = keystoreProperties["keyAlias"] as String
-            keyPassword = keystoreProperties["keyPassword"] as String
-            storeFile = keystoreProperties["storeFile"]?.let { file(it) }
-            storePassword = keystoreProperties["storePassword"] as String
+          //  keyAlias = keystoreProperties["keyAlias"] as String
+          //  keyPassword = keystoreProperties["keyPassword"] as String
+          //  storeFile = keystoreProperties["storeFile"]?.let { file(it) }
+          //  storePassword = keystoreProperties["storePassword"] as String
             isV1SigningEnabled = true
             isV2SigningEnabled = true
         }

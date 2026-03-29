@@ -11,7 +11,7 @@ plugins {
 val keystoreProperties = Properties()
 val keystorePropertiesFile = rootProject.file("key.properties")
 if (keystorePropertiesFile.exists()) {
-    keystoreProperties.load(FileInputStream(keystorePropertiesFile))
+     keystoreProperties.load(FileInputStream(keystorePropertiesFile))
 }
 
 android {
@@ -53,9 +53,9 @@ android {
     buildTypes {
         release {
             // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig = signingConfigs.getByName("release")
-            isMinifyEnabled = true
-            isShrinkResources = true
+            signingConfig = signingConfigs.getByName("debug")
+            isMinifyEnabled = false
+            isShrinkResources = false
             proguardFiles(
                 // Default file with automatically generated optimization rules.
                 getDefaultProguardFile("proguard-android-optimize.txt"),
